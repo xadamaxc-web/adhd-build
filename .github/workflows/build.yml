@@ -12,7 +12,7 @@ jobs:
           node-version: 22
       - run: tar -xf session21-tma-auth-fixed.tar -C .
       - run: npm install --no-audit --no-fund
-      - run: node scripts/with-app-env.mjs vite build
+      - run: PATH="$PWD/node_modules/.bin:$PATH" node scripts/with-app-env.mjs vite build
       - uses: actions/upload-artifact@v4
         with:
           name: output
